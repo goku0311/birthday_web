@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+      height: 100vh;
+      text-align: center;
+      background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHo1YnE4MzBteTN3eXB5dHhmYjMweGo0cjFubGNqOHBud3V5cmxkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JRPT2DOOML5CoVNaDK/giphy.gif') center center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .balloons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -200px;
+      animation: floatUp 12s ease-in-out infinite;
+    }
+
+    .balloon:nth-child(1) { left: 15%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 35%; animation-delay: 3s; }
+    .balloon:nth-child(3) { left: 55%; animation-delay: 5s; }
+    .balloon:nth-child(4) { left: 75%; animation-delay: 2s; }
+    .balloon:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.7; }
+      50% { transform: translateY(-600px); opacity: 0.3; }
+      100% { transform: translateY(0); opacity: 0.7; }
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .bear img {
+      width: 200px;
+      margin-top: 20px;
+      animation: slideIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(200px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .start-button {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 1.3em;
+      color: white;
+      background: #ff4d88;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      animation: fadeIn 3s ease forwards;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .start-button:hover {
+      background: #e6005c;
+      transform: scale(1.05);
+    }
+
+    audio {
+      display: none;
+    }
+    .popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 0 20px #00000050;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div id="popup" class="popup">
+  <div class="popup-content">
+    <p>Hey my love, on this day I wanted to say,<br>
+You are in my heart ❤️, you shall be there forever 💕,<br>
+My greatest wish is to see you happy 😊 when you think about me,<br>
+I am [complete] when I think about you 😍💗 </p>
+    <button onclick="closePopup()">shall we move on to 2nd page?😏🎉</button>
+  </div>
+</div>
+
+  <div class="overlay"></div>
+
+  <div class="balloons">
+    <img src="https://pngimg.com/uploads/balloon/balloon_PNG4969.png" class="balloon" style="width: 60px;">
+    <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Balloons-PNG/Transparent_Balloons_PNG_Picture.png?m=1629829945" class="balloon" style="width: 60px;">
+    <img src="https://pngimg.com/uploads/balloon/balloon_PNG4963.png" class="balloon" style="width: 60px;">
+    <img src="https://pngimg.com/uploads/balloon/balloon_PNG4953.png" class="balloon" style="width: 60px;">
+    <img src="https://pngimg.com/uploads/balloon/balloon_PNG4955.png" class="balloon" style="width: 60px;">
+  </div>
+
+  <div class="content">
+    <div class="box">
+      <h1>Happy Birthday My Love ❤️</h1>
+      <div class="bear">
+        <img src="https://gallery.yopriceville.com/var/thumbs/Free-Clipart-Pictures/Happy-Birthday-PNG/Happy_Birthday_Colorful_PNG_Clip_Art_Image.png?m=1629835205" alt="Bear with Cake">
+      </div>
+      <button class="start-button" onclick="location.href='wishes.html'">🎁 Let’s gooo ms.dory🐟</button>
+    </div>
+  </div>
+
+  <script>
+  window.onload = function() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

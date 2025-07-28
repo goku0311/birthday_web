@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wishes Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+
+    .book {
+      width: 90%;
+      max-width: 700px;
+      height: 400px;
+      position: relative;
+      perspective: 2000px;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      background: #fff8f0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      transform-origin: left;
+      transform: rotateY(0deg);
+      transition: transform 1s ease;
+      backface-visibility: hidden;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .page h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2em;
+      color: #d63384;
+    }
+
+    .page p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: -60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #a61e58;
+    }
+  </style>
+</head>
+<body>
+  <div class="book">
+    <div class="page" id="page0">
+      <h2>Page 1</h2>
+      <p>My love, today is not just a special day, it’s the day the universe smiled and gifted you to the world — and to me. 💫</p>
+    </div>
+    <div class="page" id="page1">
+      <h2>Page 2</h2>
+      <p>Your smile brightens up even the darkest days. I feel blessed to be part of your story. ✨</p>
+    </div>
+    <div class="page" id="page2">
+      <h2>Page 3</h2>
+      <p>the journey of ours? it was like an two souls meant to be together 💖
+        <br>i've never thought i will fall in love again,<br> but how can i let go an angel which fell straight from the heaven?😏
+      </p>
+    </div>
+    <div class="page" id="page3">
+      <h2>Page 4</h2>
+      <p>i hope it doesn't hurt my queen 👑🤭, <br>From your silly laughs to the softest tears, I cherish everything about you. 🧸</p>
+    </div>
+    <div class="page" id="page4">
+      <h2>Page 5</h2>
+      <p>Remember our some weird jokes? like how your each nickname has its own double meanings ?, and my server pain?😂
+        <br> (who's most funniest one here?)🤭
+      </p>
+    </div>
+    <div class="page" id="page5">
+      <h2>Page 6</h2>
+      <p>obviously you are the most funniest one here!!!🤭🐟</p>
+    </div>
+    <div class="page" id="page6">
+      <h2>Page 7</h2>
+      <p>my little dory🐟<br>
+        On your birthday, I wish I could wrap myself up and give you the gift of my forever. 🎁
+      </p>
+    </div>
+    <div class="page" id="page7">
+      <h2>Page 8</h2>
+      <p>You are more than just beautiful. You are kind, brave, and wonderfull.🌹
+        <br>Let's grow old together, laugh louder, love deeper and dream bigger. 💍</p>
+    </div>
+    <div class="page" id="page8">
+      <h2>Page 9</h2>
+      <p>Thank you for existing, for being mine, and for letting me love you. 🌙</p>
+    </div>
+    <div class="page" id="page9">
+      <h2>Page 10</h2>
+      <p>Forever yours, <br><strong>Rohit 💖</strong></p>
+      <br><button onclick="location.href='quiz.html'">🎉 Time for Fun Quiz</button>
+    </div>
+
+    <div class="controls">
+      <button onclick="flipPage(-1)">◀ Prev</button>
+      <button onclick="flipPage(1)">Next ▶</button>
+    </div>
+  </div>
+
+
+
+  <script>
+    let current = 0;
+    const pages = document.querySelectorAll('.page');
+    pages.forEach((p, i) => p.style.zIndex = 10 - i);
+
+    function flipPage(direction) {
+      if (direction === 1 && current < pages.length - 1) {
+        pages[current].style.transform = 'rotateY(-180deg)';
+        current++;
+      } else if (direction === -1 && current > 0) {
+        current--;
+        pages[current].style.transform = 'rotateY(0deg)';
+      }
+    }
+  </script>
+</body>
+</html>
